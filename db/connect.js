@@ -7,12 +7,19 @@ const initDb = (callback) => {
         console.log('Db is already initialized!');
         return callback(null, _db);
     }
-    MongoClient.connect(process.env.MONGODB_URI)
+
+    const options = {
+        useUnifiedTopology: true
+    };
+
+    MongoClient.connect(process.env.MONGODB_URI, options)
         .then((client) => {
             _db = client;
+            console.log('Connected to MongoDB successfully');
             return callback(null, _db);
         })
         .catch((err) => {
+            console.error('Failed to connect to MongoDB:', err);
             return callback(err);
         });
     return null;
