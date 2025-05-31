@@ -30,3 +30,40 @@ Content-Type: application/json
 
 ### DELETE contact
 DELETE https://cse341-project-1-hvl8.onrender.com/contacts/683b577e589206005ed8ffa3
+
+
+
+
+### Localhost addresses
+### Get all contacts
+GET http://localhost:8080/contacts
+
+### Get single contact
+GET http://localhost:8080/contacts/
+
+### POST new contact  
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Don",
+    "lastName": "Carlos",
+    "email": "juan.don@gmail.com",
+    "favoriteColor": "green",
+    "birthday": "1905-05-16"
+}
+
+### PUT update contact
+PUT http://localhost:8080/contacts/
+Content-Type: application/json
+
+{
+    "firstName": "Juan",
+    "lastName": "Don",
+    "email": "juan.don@gmail.com",
+    "favoriteColor": "red",
+    "birthday": "1975-05-16"
+}
+
+### DELETE contact
+DELETE http://localhost:8080/contacts/
